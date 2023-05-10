@@ -19,8 +19,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2.2.4
+      - name: Install yarn
+        uses: yarn/action-setup@v2.2.4
         with:
           version: 7
 
@@ -28,20 +28,20 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'pnpm'
+          cache: 'yarn'
 
       - name: Install deps
-        run: pnpm install
+        run: yarn install
         env:
           CYPRESS_INSTALL_BINARY: 0
 
       - name: Generate code
         id: generate
         run: |
-          pnpm run generate:locales
-          pnpm run generate:api-docs
-          pnpm run build
-          pnpm run test -u
+          yarn generate:locales
+          yarn generate:api-docs
+          yarn build
+          yarn test -u
         continue-on-error: true
 
       - name: Check diff
@@ -52,7 +52,7 @@ jobs:
         continue-on-error: true
 
       - name: Transpile ts
-        run: pnpm exec tsc .github/workflows/commentCodeGeneration.ts --outDir .github/workflows
+        run: yarn exec tsc .github/workflows/commentCodeGeneration.ts --outDir .github/workflows
 
       - name: Comment
         uses: actions/github-script@v6

@@ -36,8 +36,8 @@ jobs:
           # Required for docs/versions tests
           fetch-depth: 0
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2.2.4
+      - name: Install yarn
+        uses: yarn/action-setup@v2.2.4
         with:
           version: 7
 
@@ -45,18 +45,18 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node_version }}
-          cache: 'pnpm'
+          cache: 'yarn'
 
       - name: Install deps
-        run: pnpm install
+        run: yarn install
         env:
           CYPRESS_INSTALL_BINARY: 0
 
       - name: Build
-        run: pnpm run build
+        run: yarn build
 
       - name: Test
-        run: pnpm run test
+        run: yarn test
 
   timezone-test:
     runs-on: ${{ matrix.os }}
@@ -86,8 +86,8 @@ jobs:
           # Required for docs/versions tests
           fetch-depth: 0
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2.2.4
+      - name: Install yarn
+        uses: yarn/action-setup@v2.2.4
         with:
           version: 7
 
@@ -95,18 +95,18 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node_version }}
-          cache: 'pnpm'
+          cache: 'yarn'
 
       - name: Install deps
-        run: pnpm install
+        run: yarn install
         env:
           CYPRESS_INSTALL_BINARY: 0
 
       - name: Build
-        run: pnpm run build
+        run: yarn build
 
       - name: Test
-        run: pnpm run test
+        run: yarn test
 
   e2e-test:
     runs-on: ubuntu-latest
@@ -117,20 +117,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2.2.4
+      - name: Install yarn
+        uses: yarn/action-setup@v2.2.4
         with:
           version: 7
 
       - name: Install deps
-        run: pnpm install
+        run: yarn install
 
       - name: Build docs
-        run: pnpm run docs:build:ci
+        run: yarn docs:build:ci
 
       - id: e2e
         name: Run e2e
-        run: pnpm run docs:test:e2e:run
+        run: yarn docs:test:e2e:run
 
   lint:
     runs-on: ubuntu-latest
@@ -142,8 +142,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2.2.4
+      - name: Install yarn
+        uses: yarn/action-setup@v2.2.4
         with:
           version: 7
 
@@ -151,18 +151,18 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'pnpm'
+          cache: 'yarn'
 
       - name: Install deps
-        run: pnpm install
+        run: yarn install
         env:
           CYPRESS_INSTALL_BINARY: 0
 
       - name: Lint
-        run: pnpm run lint
+        run: yarn lint
 
       - name: Check formatting
-        run: pnpm prettier --check .
+        run: yarn prettier --check .
 
   ts-check-scripts:
     runs-on: ubuntu-latest
@@ -174,8 +174,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2.2.4
+      - name: Install yarn
+        uses: yarn/action-setup@v2.2.4
         with:
           version: 7
 
@@ -183,15 +183,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'pnpm'
+          cache: 'yarn'
 
       - name: Install deps
-        run: pnpm install
+        run: yarn install
         env:
           CYPRESS_INSTALL_BINARY: 0
 
       - name: Check scripts
-        run: pnpm run ts-check:scripts
+        run: yarn ts-check:scripts
 
   ts-check-tests:
     runs-on: ubuntu-latest
@@ -203,8 +203,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2.2.4
+      - name: Install yarn
+        uses: yarn/action-setup@v2.2.4
         with:
           version: 7
 
@@ -212,15 +212,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'pnpm'
+          cache: 'yarn'
 
       - name: Install deps
-        run: pnpm install
+        run: yarn install
         env:
           CYPRESS_INSTALL_BINARY: 0
 
       - name: Check tests
-        run: pnpm run ts-check:tests
+        run: yarn ts-check:tests
 
   codecov:
     runs-on: ubuntu-latest
@@ -232,8 +232,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2.2.4
+      - name: Install yarn
+        uses: yarn/action-setup@v2.2.4
         with:
           version: 7
 
@@ -241,18 +241,18 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'pnpm'
+          cache: 'yarn'
 
       - name: Install deps
-        run: pnpm install
+        run: yarn install
         env:
           CYPRESS_INSTALL_BINARY: 0
 
       - name: Build
-        run: pnpm run build
+        run: yarn build
 
       - name: Generate coverage report
-        run: pnpm vitest run --coverage
+        run: yarn vitest run --coverage
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3.1.1
