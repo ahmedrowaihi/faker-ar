@@ -1,39 +1,21 @@
 <div align="center">
+
+# This repo was forked from [@ahmedrowaihi/faker-ar](https://github.com/ahmedrowaihi/faker-ar)
+
+# it supports AR only for Lorem-Ipsum-like text
+
   <img src="./docs/public/logo.svg" width="200"/>
   <h1>Faker</h1>
   <p>Generate massive amounts of fake (but realistic) data for testing and development.</p>
   
-  [![npm version](https://badgen.net/npm/v/@faker-js/faker)](https://www.npmjs.com/package/@faker-js/faker)
-  [![npm downloads](https://badgen.net/npm/dm/@faker-js/faker)](https://www.npmjs.com/package/@faker-js/faker)
-  [![Continuous Integration](https://github.com/faker-js/faker/actions/workflows/ci.yml/badge.svg)](https://github.com/faker-js/faker/actions/workflows/ci.yml)
-  [![codecov](https://codecov.io/gh/faker-js/faker/branch/next/graph/badge.svg?token=N61U168G08)](https://codecov.io/gh/faker-js/faker)
-  [![Chat on Discord](https://img.shields.io/badge/chat-discord-blue?style=flat&logo=discord)](https://chat.fakerjs.dev)
-  [![Open Collective](https://img.shields.io/opencollective/backers/fakerjs)](https://opencollective.com/fakerjs#section-contributors)
-  [![sponsor](https://img.shields.io/opencollective/all/fakerjs?label=sponsors)](https://opencollective.com/fakerjs)
+  [![npm version](https://badgen.net/npm/v/@ahmedrowaihi/faker-ar)](https://www.npmjs.com/package/@ahmedrowaihi/faker-ar)
+  [![npm downloads](https://badgen.net/npm/dm/@ahmedrowaihi/faker-ar)](https://www.npmjs.com/package/@ahmedrowaihi/faker-ar)
   
 </div>
 
-## ⚡️ Try it Online
-
-[![](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://fakerjs.dev/new)
-
 [API Documentation](https://fakerjs.dev/guide/)
 
----
-
-Please select the version of the documentation you are looking for.
-
-| Version |                         Github                         | Website                   |
-| :-----: | :----------------------------------------------------: | :------------------------ |
-| release | [releases](https://github.com/faker-js/faker/releases) | https://fakerjs.dev/      |
-|   dev   |  [next](https://github.com/faker-js/faker/tree/next)   | https://next.fakerjs.dev/ |
-| v8.x.x  |    [v8](https://github.com/faker-js/faker/tree/v8)     | https://v8.fakerjs.dev/   |
-| v7.x.x  |    [v7](https://github.com/faker-js/faker/tree/v7)     | https://v7.fakerjs.dev/   |
-| v6.x.x  |    [v6](https://github.com/faker-js/faker/tree/v6)     | https://v6.fakerjs.dev/   |
-
----
-
-## 🚀 Features
+## 🚀 Features | WIP
 
 - 💌 Locations - Generate valid looking Addresses, Zip Codes, Street Names, States, and Countries!
 - ⏰ Time-based Data - Past, present, future, recent, soon... whenever!
@@ -51,14 +33,14 @@ Please select the version of the documentation you are looking for.
 ## 📦 Install
 
 ```bash
-npm install --save-dev @faker-js/faker
+npm install --save-dev @ahmedrowaihi/faker-ar
 ```
 
 ## 🪄 Usage
 
 ```ts
-import { faker } from '@faker-js/faker';
-// import { faker } from '@faker-js/faker/locale/de';
+import { faker } from '@ahmedrowaihi/faker-ar';
+// import { faker } from '@ahmedrowaihi/faker-ar/locale/ar';
 
 export const USERS: User[] = [];
 
@@ -122,11 +104,7 @@ The API covers the following modules:
 Faker contains a generator method `faker.helpers.fake` for combining faker API methods using a mustache string format.
 
 ```ts
-console.log(
-  faker.helpers.fake(
-    'Hello {{person.prefix}} {{person.lastName}}, how are you today?'
-  )
-);
+console.log(faker.helpers.fake('Hello {{person.prefix}} {{person.lastName}}, how are you today?'));
 ```
 
 ## 🌏 Localization
@@ -177,19 +155,19 @@ Faker is an MIT-licensed open source project with its ongoing development made p
 
 ## ✨ Contributing
 
-Please make sure to read the [Contributing Guide](https://github.com/faker-js/faker/blob/next/CONTRIBUTING.md) before making a pull request.
+Please make sure to read the [Contributing Guide](https://github.com/ahmedrowaihi/faker-ar/blob/next/CONTRIBUTING.md) before making a pull request.
 
 ## 📘 Credits
 
 Thanks to all the people who already contributed to Faker!
 
-<a href="https://github.com/faker-js/faker/graphs/contributors"><img src="https://opencollective.com/fakerjs/contributors.svg?width=800" /></a>
+<a href="https://github.com/ahmedrowaihi/faker-ar/graphs/contributors"><img src="https://opencollective.com/fakerjs/contributors.svg?width=800" /></a>
 
 The [fakerjs.dev](https://fakerjs.dev) website is kindly hosted by the Netlify Team. Also the search functionality is powered by [algolia](https://www.algolia.com).
 
 ## 📝 Changelog
 
-Detailed changes for each release are documented in the [release notes](https://github.com/faker-js/faker/blob/next/CHANGELOG.md).
+Detailed changes for each release are documented in the [release notes](https://github.com/ahmedrowaihi/faker-ar/blob/next/CHANGELOG.md).
 
 ## 📜 What happened to the original faker.js?
 
@@ -197,4 +175,4 @@ Read the [team update](https://fakerjs.dev/update.html) (January 14th, 2022).
 
 ## 🔑 License
 
-[MIT](https://github.com/faker-js/faker/blob/next/LICENSE)
+[MIT](https://github.com/ahmedrowaihi/faker-ar/blob/next/LICENSE)
