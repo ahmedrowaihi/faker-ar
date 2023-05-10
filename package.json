@@ -1,6 +1,6 @@
 {
   "name": "@ahmedrowaihi/faker-ar",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "description": "Generate massive amounts of fake contextual data",
   "keywords": [
     "faker",
@@ -18,7 +18,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ahmedrowaihi/faker.git"
+    "url": "https://github.com/ahmedrowaihi/faker-ar.git"
   },
   "license": "MIT",
   "main": "dist/cjs/index.js",
@@ -52,7 +52,7 @@
     "tsconfig.json"
   ],
   "scripts": {
-    "clean": "rimraf coverage .eslintcache dist docs/.vitepress/dist pnpm-lock.yaml node_modules",
+    "clean": "rimraf coverage .eslintcache dist docs/.vitepress/dist yarn.yaml node_modules",
     "build:clean": "rimraf dist",
     "build:code": "tsx ./scripts/bundle.ts",
     "build:types": "tsc --emitDeclarationOnly --outDir dist/types",
@@ -78,7 +78,7 @@
     "docs:test:e2e:run": "run-p --race docs:serve \"cypress run\"",
     "docs:test:e2e:open": "run-p --race docs:serve \"cypress open\"",
     "release": "standard-version",
-    "prepublishOnly": "pnpm run clean && pnpm install && pnpm run build"
+    "prepublishOnly": "yarn clean && yarn && yarn build"
   },
   "devDependencies": {
     "@actions/github": "~5.1.1",
@@ -127,7 +127,7 @@
     "vitest": "~0.28.3",
     "vue": "~3.2.45"
   },
-  "packageManager": "pnpm@7.26.2",
+  "packageManager": "yarn.26.2",
   "engines": {
     "node": "^14.17.0 || ^16.13.0 || >=18.0.0",
     "npm": ">=6.14.13"
